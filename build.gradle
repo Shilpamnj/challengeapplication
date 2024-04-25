@@ -29,9 +29,6 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	implementation 'javax.validation:validation-api:2.0.1.Final'
 
-
-	//implementation  'javax.validation: validation-api: version:2.0.0.Final'
-
 }
 
 tasks.named('test') {
