@@ -32,7 +32,7 @@ public class AccountsService {
   public Account getAccount(String accountId) {
     return this.accountsRepository.getAccount(accountId);
   }
-  public String  transferAmount(String fromAccountId, String toAccountId, String amount) {
+  public synchronized String  transferAmount(String fromAccountId, String toAccountId, String amount) {
     BigDecimal transferAmount = new BigDecimal(amount);
     Account fromAccount = accountsRepository.getAccount(fromAccountId);
 
