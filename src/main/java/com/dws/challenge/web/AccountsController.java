@@ -56,4 +56,11 @@ public class AccountsController {
     return new ResponseEntity<>(rst,HttpStatus.OK);
   }
 
+   @PostMapping(path = "/transfer-amount1")
+  public ResponseEntity<String> transferAmount1(@RequestParam("fromAccountID") String fromAccountId,@RequestParam("toAccountId") String toAccountId,@RequestParam("amount") String amount) {
+    log.info("Transfer amount from account Id {} : to account Id {}",fromAccountId,toAccountId);
+    accountsService.transferAmountViaThreadPool(fromAccountId,toAccountId,amount);
+    return new ResponseEntity<>("Job running to transfer job",HttpStatus.OK);
+  }
+
 }
